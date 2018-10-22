@@ -173,7 +173,7 @@ class DatePicker extends Component {
     if (!date && placeholder) {
       return (<Text style={[Style.placeholderText, customStyles.placeholderText]}>{placeholder}</Text>);
     }
-    return (<Text style={[Style.dateText, customStyles.dateText]}>{this.getDateStr()}</Text>);
+    return (<Text style={[Style.dateText, customStyles.dateText]}>{moment(this.props.date).format(this.props.displayFormat)}</Text>);
   }
 
   onDateChange(date) {
@@ -421,6 +421,7 @@ DatePicker.defaultProps = {
   cancelBtnText: '取消',
   iconSource: require('./date_icon.png'),
   customStyles: {},
+  displayFormat: 'll',
 
   // whether or not show the icon
   showIcon: true,
@@ -434,6 +435,7 @@ DatePicker.propTypes = {
   androidMode: React.PropTypes.oneOf(['calendar', 'spinner', 'default']),
   date: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.instanceOf(Date)]),
   format: React.PropTypes.string,
+  displayFormat: React.PropTypes.string,
   minDate: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.instanceOf(Date)]),
   maxDate: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.instanceOf(Date)]),
   height: React.PropTypes.number,
