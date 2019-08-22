@@ -186,7 +186,7 @@ class DatePicker extends Component {
         allowFontScaling={allowFontScaling}
         style={[Style.dateText, customStyles.dateText]}
       >
-        {moment(this.props.date).format(this.props.displayFormat)}
+        {Moment(this.props.date).format(this.props.displayFormat)}
       </Text>
     );
   }
