@@ -517,7 +517,7 @@ DatePicker.propTypes = {
     PropTypes.object
   ]),
   format: PropTypes.string,
-  displayFormat: React.PropTypes.string,
+  displayFormat: PropTypes.string,
   minDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
   maxDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
   height: PropTypes.number,
